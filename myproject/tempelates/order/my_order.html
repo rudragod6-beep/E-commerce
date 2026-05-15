@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 style="text-align:center; margin:30px;">My Orders 📦</h1>
+
+<div style="max-width:800px; margin:auto;">
+
+    {% for order in orders %}
+
+    <div style="border:1px solid #ddd; padding:15px; margin:10px 0;">
+
+        <h3>Order #{{ order.id }}</h3>
+        <p>Date: {{ order.created_at }}</p>
+        <p>Total: Rs. {{ order.total_price }}</p>
+
+    </div>
+
+    {% empty %}
+
+    <p>No orders yet.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

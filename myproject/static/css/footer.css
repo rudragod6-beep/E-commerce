@@ -1,0 +1,11 @@
+.footer{
+    background:#e04909;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.footer-content h2{
+    margin-bottom:10px;
+}

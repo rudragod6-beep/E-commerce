@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h1>About Hamro Karma 🇳🇵</h1>
+        <p class="about-subtitle">Empowering Nepal Through Digital Commerce</p>
+    </div>
+</section>
+
+<section class="about-intro">
+    <div class="intro-text">
+        <p>Hamro Karma is Nepal's innovative digital marketplace designed to revolutionize local online shopping. We connect buyers with trusted sellers, creating a vibrant ecosystem that supports Nepali businesses and celebrates our unique culture.</p>
+    </div>
+</section>
+
+<section class="mission-vision">
+    <div class="mission-vision-grid">
+
+        <div class="mission-box">
+
+            <div class="box-icon">🎯</div>
+
+            <h2>Our Mission</h2>
+
+            <p>
+                To connect Nepal digitally by providing a trusted, accessible, and innovative platform that empowers businesses and delights customers through quality products and exceptional service.
+            </p>
+
+        </div>
+
+        <div class="vision-box">
+
+            <div class="box-icon">🚀</div>
+
+            <h2>Our Vision</h2>
+
+            <p>
+                Build Nepal's most reliable and customer-centric online marketplace, fostering economic growth and digital transformation across the nation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="values">
+    <h2 class="section-title">Our Core Values</h2>
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>🤝 Trust</h3>
+            <p>We build relationships based on transparency, reliability, and honest communication with every customer and seller.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>✨ Quality</h3>
+            <p>Every product is verified and every transaction is protected. Excellence is our standard, not an exception.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>🌍 Community</h3>
+            <p>We celebrate Nepali entrepreneurs and support local businesses to thrive in the digital economy.</p>
+        </div>
+
+        <div class="value-card">
+            <h3>💡 Innovation</h3>
+            <p>We continuously evolve our platform with cutting-edge technology to serve you better.</p>
+        </div>
+    </div>
+</section>
+
+<section class="achievements">
+    <h2 class="section-title">Our Achievements</h2>
+    <div class="achievements-grid">
+        <div class="achievement-item">
+            <h3 class="achievement-number">10K+</h3>
+            <p>Products</p>
+        </div>
+        <div class="achievement-item">
+            <h3 class="achievement-number">50K+</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="achievement-item">
+            <h3 class="achievement-number">500+</h3>
+            <p>Verified Sellers</p>
+        </div>
+        <div class="achievement-item">
+            <h3 class="achievement-number">24/7</h3>
+            <p>Customer Support</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-about">
+    <div class="cta-content">
+        <h2>Ready to Shop with Us?</h2>
+        <p>Join thousands of satisfied customers and discover quality products from trusted sellers.</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg">Start Shopping Now</a>
+    </div>
+</section>
+
+{% endblock %}

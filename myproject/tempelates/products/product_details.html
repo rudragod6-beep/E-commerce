@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+
+<div class="product-detail-page">
+    <div class="product-detail-card">
+        <div class="product-detail-image">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <div class="image-placeholder">No image available</div>
+            {% endif %}
+        </div>
+
+        <div class="product-detail-info">
+            <h1>{{ product.name }}</h1>
+            <p class="product-price">Rs. {{ product.price|floatformat:2 }}</p>
+            <p class="product-stock">Stock: <strong>{{ product.stock|default:0 }}</strong></p>
+            <p class="product-description">{{ product.description }}</p>
+
+            <div class="product-actions">
+                <a href="{% url 'product_list' %}" class="btn btn-secondary">Back to products</a>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart 🛒</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

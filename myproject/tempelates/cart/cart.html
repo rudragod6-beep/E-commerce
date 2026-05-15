@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 style="text-align:center; margin:30px;">Your Cart 🛒</h1>
+
+<div style="max-width:800px; margin:auto;">
+
+    {% for p in products %}
+    <div style="display:flex; justify-content:space-between; margin:10px 0; padding:10px; border-bottom:1px solid #ddd;">
+
+        <div>
+            <h3>{{ p.name }}</h3>
+            <p>Qty: {{ p.qty }}</p>
+            <p>Price: Rs. {{ p.price }}</p>
+            <p>Subtotal: Rs. {{ p.subtotal }}</p>
+        </div>
+
+        <a href="{% url 'remove_from_cart' p.id %}">
+            <button class="btn">Remove</button>
+        </a>
+
+    </div>
+    {% endfor %}
+
+    {% if products %}
+    <hr>
+
+    <h2>Total: Rs. {{ total }}</h2>
+
+    {% if user.is_authenticated %}
+    <a href="{% url 'checkout' %}">
+        <button class="btn">Checkout 💳</button>
+    </a>
+    {% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to checkout.</p>
+    {% endif %}
+    {% else %}
+    <p>Your cart is empty.</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}

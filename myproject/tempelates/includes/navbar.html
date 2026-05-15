@@ -1,0 +1,68 @@
+<nav class="sidebar-navbar">
+    <div class="logo-section">
+        <div class="logo">🇳🇵</div>
+        <div class="brand-name">Hamro<br>Karma</div>
+    </div>
+
+    <div class="nav-groups">
+        <div class="nav-group nav-group-top">
+            <ul class="nav-links">
+                <li>
+                    <a href="{% url 'home' %}" class="nav-item">
+                        <span class="icon">🏠</span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" class="nav-item">
+                        <span class="icon">ℹ️</span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'product_list' %}" class="nav-item">
+                        <span class="icon">🛍️</span>
+                        <span class="text">Products</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-group nav-group-bottom">
+            <ul class="nav-links">
+                <li>
+                    <a href="{% url 'cart' %}" class="nav-item">
+                        <span class="icon">🛒</span>
+                        <span class="text">Cart</span>
+                </li>
+              <li>
+                    <a href="{% url 'my_orders' %}" class="nav-item">
+                        <span class="icon">📦</span>
+                        <span class="text">My Orders</span>
+                    </a> 
+                    </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="sidebar-overlay"></div>
+
+<div class="top-profile-bar">
+    <button class="sidebar-toggle" aria-label="Toggle navigation">☰</button>
+    {% if user.is_authenticated %}
+        <div class="profile-menu">
+            <span class="profile-name">👤 {{ user.username }}</span>
+            <div class="profile-dropdown">
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'my_orders' %}" class="dropdown-item">My Orders</a>
+                <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="auth-links">
+            <a href="{% url 'login' %}" class="btn-auth login">Login</a>
+            <a href="{% url 'register' %}" class="btn-auth register">Register</a>
+        </div>
+    {% endif %}
+</div>

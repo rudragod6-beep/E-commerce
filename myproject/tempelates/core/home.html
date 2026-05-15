@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1 class="hero-title">Welcome to Hamro Karma 🇳🇵</h1>
+        <p class="hero-subtitle">Nepal's Premier Digital Marketplace for Authentic Products</p>
+        <p class="hero-description">Discover quality products from trusted sellers. Shop local, support Nepali businesses, and get fast delivery right to your doorstep.</p>
+        <div class="hero-buttons">
+            <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg">Shop Now</a>
+            <a href="{% url 'about' %}" class="btn btn-secondary btn-lg">Learn More</a>
+        </div>
+    </div>
+
+</section>
+
+<section class="features">
+    <h2 class="section-title">Why Choose Hamro Karma?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🛍️</div>
+            <h3>Curated Products</h3>
+            <p>Hand-picked items from verified sellers ensuring quality and authenticity.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick nationwide delivery system with real-time tracking.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Payments</h3>
+            <p>Multiple payment options with bank-level encryption and buyer protection.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>24/7 Support</h3>
+            <p>Dedicated customer service team ready to help whenever you need.</p>
+        </div>
+    </div>
+</section>
+
+<section class="trending">
+    <h2 class="section-title">Trending Now</h2>
+    <div class="trending-content">
+        <p class="trending-message">Add products to see them featured here!</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary">Browse All Products</a>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-content">
+        <h2>Join Thousands of Happy Shoppers</h2>
+        <p>Start shopping with Hamro Karma today and experience the best of Nepali e-commerce.</p>
+        <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg">Start Shopping</a>
+    </div>
+</section>
+
+{% endblock %}
